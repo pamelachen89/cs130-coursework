@@ -1,0 +1,264 @@
+body {
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    color: #fff;
+}
+a, a:hover, a:visited, a:active { 
+    color: #fff;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/**********/
+/* Layout */
+/**********/
+aside, footer, header, nav, section, article {
+    display: flex;
+    flex-direction: column;
+}
+body {
+    overflow: hidden;
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: auto 100px;
+    grid-template-areas:
+       "left main"
+       "bottom bottom";
+    height: 100vh;
+}
+aside {
+    background-color: #000;
+    grid-area: left;
+}
+
+header {
+    background: #111;
+    position: fixed;
+    width: calc(100vw - 250px);
+    left: 250px;
+}
+
+main {
+    background: #111;
+    grid-area: main;
+    min-height: calc(350px);
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    z-index: 3;
+}
+
+nav {
+    margin-top: 100px;
+}
+
+footer {
+    background: #222;
+    grid-area: bottom;
+}
+
+
+/***************************/
+/* Accessories & Florishes */
+/***************************/
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 4px solid transparent;
+    border-radius: 16px;
+    background-clip: padding-box;
+    min-height: 30px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: hsla(0,0%,100%,.3);
+}
+
+
+/***************************/
+/* Part A: Left Navigation */
+/***************************/
+
+#sidebar > h1 {
+    margin-left: 20px;
+    font-size: 40;
+}
+
+#sidebar > a {
+    margin-left: 20px;
+    margin-top: 10px;
+    color: darkgray;
+}
+
+#sidebar > a:hover {
+    color: white;
+}
+
+.fa-home {
+    margin: 10px;
+}
+
+.fa-search{
+    margin: 10px;
+}
+
+.fa-headphones{
+    margin: 10px;
+}
+
+#sidebar > a:hover{
+    border-left: solid;
+    border-width:2px;
+    border-color:#1db954;
+}
+
+/********************************/
+/* Part B: Header & Nav Styling */
+/********************************/
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    height:80px;
+}
+
+#upgrade {
+    margin: 15px;
+    border: solid;
+    border-radius: 18px;
+    border-width: 1px;
+    padding: 7px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#upgrade:hover{
+    background-color: gray;
+}
+
+#profile{
+    margin: 15px;
+    background-color: 272928;
+    border: hidden;
+    border-radius: 18px;
+    border-width: 1px;
+    padding: 7px;
+    padding-left: 30px;
+    padding-right:30px;
+}
+
+#profile:hover{
+    background-color:black;
+}
+
+nav {
+    flex-direction: row;
+    justify-content: flex-start
+}
+
+nav > a{
+    margin: 20px;
+}
+
+nav > a:hover{
+    border-bottom: solid;
+    border-width:2px;
+    border-color:#1db954;
+}
+
+
+/*************************/
+/* Part C: Artists Panel */
+/*************************/
+
+article {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.play-button {
+    visibility: hidden;
+    display: flex;
+    justify-content: flex-end;
+    color:#fff);
+}
+
+.artist-card:hover .play-button{
+    visibility: visible;
+}
+
+.fa-play{
+    border: solid 15px #1db954;
+    border-radius: 100px;
+    background: #1db954;
+}
+
+.artist-card{
+    width: 20%;
+}
+
+.artist-card > div{
+    margin: 10px;
+    padding: 10px;
+    border: hidden;
+    border-width: 1px;
+    border-radius: 15px;
+    background-color: #222;
+}
+
+.artist-card > div > img{
+    border: hidden;
+    border-width: 1px;
+    border-radius: 100%;
+    border-spacing: -100px;
+    width:80%;
+    margin-left: 18px;
+}
+
+.artist-card > div > h3{
+    font-size: 15;
+    margin-left: 10px;
+}
+
+.artist-card > div > p{
+    font-size: 13;
+    margin-left: 10px;
+}
+
+/**************************/
+/* Part D: Responsive UIs */
+/**************************/
+
+@media screen and (max-width: 1200px){
+    .artist-card{
+        width:33.33%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .artist-card{
+        width: 50%;
+    }
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 100px;
+        grid-template-areas:
+        "main"
+        "bottom";
+        min-height: 100vh;
+        row-gap: 10px;
+        column-gap: 10px;
+    }
+    aside {
+        display: none;
+    }
+    #upgrade {
+        display: none;
+    }
+}
