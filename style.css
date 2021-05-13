@@ -5,8 +5,13 @@
 
 body {
     margin: 0px;
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
+
+header, h2{
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
 header, section {
     padding: 20px;
 }
@@ -14,8 +19,26 @@ p, li {
     line-height: 1.5em;
 }
 
+header { 
+    background-color:#5386e4;
+}
+
 #inspiration {
     background-color: #F0F0F0;
     padding-top: 40px;
     padding-bottom: 40px;
 }
+
+h2{
+    color:#b6c649;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+a {
+    color:#5386e4;
+}
+
