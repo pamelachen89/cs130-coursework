@@ -1,0 +1,36 @@
+body {
+    display: grid;
+    grid-template-columns: .45fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "a b";
+    min-height: 100vh;
+    background-color:#a12741;
+}
+
+#sidebar {
+    grid-area:a;
+    color:#ffff;
+    background-color:#a12741;
+}
+
+a {
+    color:#ffff
+}
+
+a:hover{
+    color:#d1627a;
+}
+
+#sidebar img {
+    width: 50%;
+}
+
+main {
+    grid-area:b;
+    background-color: #ffff;
+}
+
+main img {
+    width: 30%;
+}
