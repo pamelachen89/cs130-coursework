@@ -3,9 +3,21 @@ var scrolltotop = document.getElementById("gototop");
 
 scrolltotop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth'});
 
-//ask me anything submit
 
-// var asksubmit = document.getElementById("submit");
+//collapsible content for my-fav-things
 
-// asksubmit.onclick = () =>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
     

@@ -51,13 +51,11 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-}
-
-#follow, #tumblrhomepage{
     position: -webkit-sticky;
     position: sticky;
-    top: 20px;
-}
+    top: 0;
+    z-index:1000;
+} 
 
 .homepage main{
     display: flex;
@@ -153,29 +151,18 @@ main h1{
     margin-right: 15px;
 }
 
-#notes p:hover{
-    color:#a12741
-}
-}
-
-#footer p{
-    margin-right: 15px;
-}
 
 #notes a{
     color:#1E2846;
 }
 
-#notes a:hover{
+#notes p:hover, #notes a:hover, .footer:hover{
     color:#a12741;
 }
 
-#notes, #footer p:hover{
-    color:#a12741;
-}
-
-#notes, #footer{
+#notes, .footer{
     display:flex;
+    flex-wrap:wrap;
 }
 
 blockquote{
@@ -190,4 +177,14 @@ blockquote{
 
 blockquote p{
     font-size:12px;
+}
+
+.content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+
+.collapsible:hover{
+    color:#a12741;
 }
